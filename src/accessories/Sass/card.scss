@@ -1,0 +1,31 @@
+div.animated-box{
+
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  position: absolute;
+  top:10%;
+  left:50%;
+  text-align: center;
+  border-radius: 4px;
+
+  div{
+    transform: rotateY(180deg);
+    color: white;
+  }
+
+
+}
+
+.blue-box{
+  position: absolute;
+  top:10%;
+  left:50%;
+  height: 200px;
+  width: 200px;
+  background-color: blue;
+  color: white;
+
+  text-align: center;
+  border-radius: 4px;
+}

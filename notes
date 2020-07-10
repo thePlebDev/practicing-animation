@@ -1,0 +1,69 @@
+REACT SPRING ANIMATION LIBRARY:
+- the hook that we want to learn about is the useSpring hook;
+
+
+USESPRING:
+
+-so we import {useSpring, animated} from 'react spring'
+
+-either: overwrite values to change the animation
+-if we re-render the component with changes props, the animation will update.
+
+const props = useSpring({opacity: toggel ? 1 : 0})
+
+-or: pass a function that returns values, and update using "set"
+- we will get an updater function back. It will not cause the component to render like an overwrite would
+{still the animaiton executes of course}. handling updates like this is useful for fast-occuring updates, and should
+generally prefer it
+
+- so I really need to understand how the use spring works
+- obviously we know that we have to import useSpring and animated. Those two things can turn values into animated values
+
+- we can do the animation one in two ways.
+
+1) overwrite values to change the animation
+- so basicaly if we re-render the component with changed props then the animation will take place
+- so we create a value props and set the value to useSpring({opacity:toggle ? 1 : 0}). so I think the animation will
+take place when every the toggle value changes. so lets try this one and see what kind of animation that it does.
+- so I need to create a toggle state to go with my opacity then
+- so then once we have the opacity to change when the toggel value gets changed
+
+- once we have that de distribute the animated props among the view
+- so the animation actually looks and works pretty good
+SO WHAT DID WE JUST DO?
+1) first we imported useSpring and animated
+
+2) the we define props
+- this will be what we put into as style
+- we go const props=useSpring({opacity:toggle ? 1 : 0})
+- this means that the animation will take place whenever the toggle changes and it will automatically create and execute
+the animation
+- we can add whatever style we want to animate to the object inside of useSpring
+- this is the first way that we can control animation
+
+3)<animated.div style={props}>hello</animated.div>
+- this is how what we do to the element that we want to animate the styles will be animated are the ones that we
+specified in the props variable. verty bueno.
+
+-the second way that we can do animation is to pass a function that returns values, and updated using set.
+- we will get back an updater function back but it wil not cause the component to render like an overwrite would. the
+animation executes of course. handling updates like this is useful for fast-occuring updates, and you should generally
+prefer it.
+- I still like the first method
+
+- damn and then the common api has even more things we are able to configure.
+
+BOX-SHADOW:
+-the box-shadow goes box-shadow: h-offset v-offset blur spread color
+
+h-offset: Required. this is the horizontal offset of the shadow. A positive value puts the shadow on the right side
+of the box. a negative value puts the shadow on the left side of the box
+
+v-offset: Required. The vertical offset of the shadow. A positive value puts the shadow below the box, a negative value
+puts the shadow above the box.
+
+blur: Optional. The blur radius. The higher the number the more blured the shadow will be
+
+spread: Optional. a positive value that increases the size of the shadow, a negative value decrease the size of the shadow
+
+- when we use the box-shadow, it is important that we use low opacity, when creating things.
